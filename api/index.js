@@ -13,7 +13,11 @@ if (process.env.DEVELOPMENT) {
 }
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  try {
+    res.send("Hello World");
+  } catch (err) {
+    res.status(400).send(`${err}`);
+  }
 });
 
 app.get("/task", async (req, res) => {
