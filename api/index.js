@@ -16,8 +16,8 @@ app.get("/", (req, res) => {
   try {
     res.send("Hello World");
   } catch (err) {
-    //res.status(400).send(`${err}`);
-    console.log(err);
+    res.status(400).send(`${err}`);
+    //console.log(err);
   }
 });
 
