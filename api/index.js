@@ -8,9 +8,9 @@ const port = 3001;
 
 app.use(express.json());
 
-if (process.env.DEVELOPMENT) {
-  app.use(cors());
-}
+//if (process.env.DEVELOPMENT) {
+//  app.use(cors());
+//}
 
 app.get("/", (req, res) => {
   try {
@@ -64,10 +64,10 @@ app.delete("/task/:id", async (req, res) => {
   }
 });
 
-if (process.env.DEVELOPMENT) {
-  app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-  });
-}
+//if (process.env.DEVELOPMENT) {
+//  app.listen(port, () => {
+//    console.log(`Example app listening on port ${port}`);
+//  });
+//}
 
 export const handler = serverless(app);
